@@ -12,6 +12,8 @@ function addEvents() {
     const $genderSelect = $("#contact-form input[type='radio']");
     const $messageArea = $('#message-area');
     const $submitBtn = $('#submit-btn');
+    const $successMsg = $('.success-message');
+    const $successMsgClose = $('#success-msg-close');
     let gender;
 
     $fNameInput.change(function() {
@@ -28,6 +30,10 @@ function addEvents() {
     
     $messageArea.change(function() {
         validateMessage();
+    });
+
+    $successMsgClose.click(function() {
+        $successMsg.css('display', 'none');
     });
 
     function validateName(inputName, alertMsg) {
@@ -72,7 +78,6 @@ function addEvents() {
 
     $submitBtn.click(function(){
         const $contactingPerson = $('#contacting-person');
-        const $successMsg = $('.success-message');
         const checkfName = validateName($fNameInput, $fNameAlert);
         const checklName = validateName($lNameInput, $lNameAlert);
         const checkGender = validateGender();
