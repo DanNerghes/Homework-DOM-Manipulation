@@ -30,14 +30,14 @@ function addEvents() {
         validateMessage();
     });
 
-    function validateName(input, alert) {
-        if(input.val().length < 3 || input.val().length >26 || !(/^[^0-9]+$/.test(input.val()))) {
-            alert.css('visibility', 'visible');
-            input.addClass('error-box');
+    function validateName(inputName, alertMsg) {
+        if(inputName.val().length < 3 || inputName.val().length >26 || !(/^[^0-9]+$/.test(inputName.val()))) {
+            alertMsg.css('visibility', 'visible');
+            inputName.addClass('error-box');
             return false;
         }else {
-            alert.css('visibility', 'hidden');
-            input.removeClass('error-box');
+            alertMsg.css('visibility', 'hidden');
+            inputName.removeClass('error-box');
             return true;
         }
     };
