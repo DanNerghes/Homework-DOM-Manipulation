@@ -24,13 +24,9 @@ function addEvents() {
         validateName($lNameInput, $lNameAlert);
     });
     
-    $genderSelect.change(function() {
-        validateGender();
-    });
+    $genderSelect.change(validateGender);
     
-    $messageArea.change(function() {
-        validateMessage();
-    });
+    $messageArea.change(validateMessage);
 
     $successMsgClose.click(function() {
         $successMsg.css('display', 'none');
